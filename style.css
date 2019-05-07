@@ -1,0 +1,218 @@
+/* 1. Document */
+/* 2. Header */
+
+/*----- 1. DOCUMENT -----*/
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2em;
+    --main-color: #373737;
+    --main-color-100: #e1e1e1;
+    --main-width: 80vw;
+    color: var(--main-color);
+}
+
+body {
+    margin: 0 auto;
+    height: 250vh;
+}
+
+h1 {
+    font-size: 2.3rem;
+    font-weight: lighter;
+    line-height: 3rem;
+    padding: 0 30px 0 5px;
+    border-bottom: 1px solid var(--main-color);
+    width: fit-content;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+a {
+    color: var(--main-color);
+}
+
+/*----- 2. SPLASH -----*/
+
+.splash {
+    height: 100vh;
+    max-width: var(--main-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0 auto;
+    animation-duration: 1.5s;
+    animation-name: fade_in_kf;
+    animation-timing-function: ease-in;
+}
+
+.splash_text {
+    /*padding: 10vh 0;*/
+}
+
+.splash_title {
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
+.splash_sub {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    max-width: 950px;
+}
+
+.splash_next {
+    width: 100%;
+    text-align: center;
+}
+
+.splash_arrow {
+    animation-duration: 1s;
+    animation-name: size_pulse_kf;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+.splash_arrow img {
+    width: 50px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+/*----- 3. HEADER -----*/
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    border-top: 3px solid black;
+    border-bottom: 1px solid var(--main-color-100);
+    padding: 10px 0;
+    font-weight: bold;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+header {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding-top: 10vh;
+}
+
+.header_title {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.header_sub_title {
+    margin-top: 20px;
+}
+
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.header_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+/*----- 4. MAIN -----*/
+
+
+.content {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding-top: 10vh;
+    min-height: 90vh;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 6vw;
+}
+
+@media only screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 10px;
+    }
+
+    .mobile_margin_bottom {
+        margin-bottom: 20vh;
+    }
+}
+
+.grid_grey {
+    background-color: grey;
+}
+
+.image_content {
+    text-align: center;
+}
+
+.image_content img {
+    display: block;
+    width: calc(100% - 20px);
+    border: 10px solid var(--main-color);
+    border-radius: 3px;
+}
+
+.contact img {
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+}
+/*----- 5. FOOTER -----*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+}
+
+/* ----- 4. HELPERS ----- */
+
+.hide_splash {
+    height: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*----- 5. KEYFRAMES -----*/
+
+@keyframes size_pulse_kf {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fade_in_kf {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
