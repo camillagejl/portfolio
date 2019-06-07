@@ -3,7 +3,41 @@ document.addEventListener("DOMContentLoaded", start);
 const portfolio = document.querySelector("#portfolio");
 
 function start() {
-    console.log("Murmurfitsl");
+
+    // INSERT PAGES --------------------------------------------------------------------------
+
+    async function getPages() {
+        let pagesUrl = "https://camillagejl.com/portfolio/wordpress/wp-json/wp/v2/pages";
+        let jsonData = await fetch(pagesUrl);
+        page = await jsonData.json();
+        insertPages();
+    }
+
+    function insertPages() {
+        page.forEach(item => {
+          console.log("Jeg er en page");
+
+          let pageID = `${item.page_id}`;
+          console.log("Page ID: " + pageID);
+
+          document.querySelectorAll("section").forEach(section => {
+              let sectionID = section.getAttribute("data-id");
+
+              if (sectionID === pageID) {
+                  console.log("Jeg sammenligner");
+                  section.querySelector("h1").innerHTML = `${item.title.rendered}`;
+                  section.querySelector(".post_content").innerHTML = `${item.content.rendered}`;
+                  section.querySelector(".image_content").innerHTML = `<img src="${item.image.guid}">`;
+              }
+          })
+
+        });
+    }
+
+    getPages();
+    
+
+    // INSERT PORTFOLIO --------------------------------------------------------------------------
 
     async function getPortfolio() {
         let pagesUrl = "https://camillagejl.com/portfolio/wordpress/wp-json/wp/v2/posts";

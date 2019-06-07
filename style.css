@@ -22,7 +22,8 @@ h1 {
     font-size: 2.3rem;
     font-weight: lighter;
     line-height: 3rem;
-    padding: 0 30px 0 5px;
+    padding: 4rem 30px 0 5px;
+    margin: 0;
     border-bottom: 1px solid var(--main-color);
     width: fit-content;
 }
@@ -140,7 +141,6 @@ header {
 .content {
     max-width: var(--main-width);
     margin: 0 auto;
-    padding-top: 10vh;
     padding: 10vh 30px 0 30px;
     min-height: 90vh;
     position: relative;
@@ -185,6 +185,12 @@ header {
 
     .post_content:first-child {
         margin-bottom: 0;
+    }
+    .content {
+        padding-top: 0;
+    }
+    .main_header {
+        margin-bottom: 10vh;
     }
 }
 
