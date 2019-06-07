@@ -30,12 +30,11 @@ function start() {
                   section.querySelector(".image_content").innerHTML = `<img src="${item.image.guid}">`;
               }
           })
-
         });
     }
 
     getPages();
-    
+
 
     // INSERT PORTFOLIO --------------------------------------------------------------------------
 
