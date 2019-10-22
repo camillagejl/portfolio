@@ -13,6 +13,10 @@
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-behaviour: smooth;
+}
+
 body {
     margin: 0 auto;
     height: 250vh;
@@ -41,12 +45,10 @@ a {
 
 .splash {
     min-height: 100vh;
-    max-width: var(--main-width);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    margin: 0 auto;
     animation-duration: 1.5s;
     animation-name: fade_in_kf;
     animation-timing-function: ease-in;
@@ -137,13 +139,23 @@ header {
 
 /*----- 4. MAIN -----*/
 
-
 .content {
     max-width: var(--main-width);
     margin: 0 auto;
     padding: 10vh 30px 0 30px;
-    min-height: 90vh;
     position: relative;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+}
+
+.skill {
+    border:5px solid var(--main-color);
+    border-radius: 3px;
+    padding: 20px;
 }
 
 .post {
@@ -151,6 +163,10 @@ header {
     justify-content: space-between;
     flex-direction: column;
     margin-bottom: 100px;
+}
+
+#about .post {
+    margin-bottom: 1 0px;
 }
 
 .post_content:first-child {
@@ -191,6 +207,14 @@ header {
     }
     .main_header {
         margin-bottom: 10vh;
+    }
+}
+
+
+@media only screen and (min-width: 1080px) {
+    .skills {
+        grid-template-columns: repeat(3, 1fr);
+        padding-top: 0;
     }
 }
 

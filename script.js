@@ -15,16 +15,13 @@ function start() {
 
     function insertPages() {
         page.forEach(item => {
-          console.log("Jeg er en page");
 
           let pageID = `${item.page_id}`;
-          console.log("Page ID: " + pageID);
 
           document.querySelectorAll("section").forEach(section => {
               let sectionID = section.getAttribute("data-id");
 
               if (sectionID === pageID) {
-                  console.log("Jeg sammenligner");
                   section.querySelector("h1").innerHTML = `${item.title.rendered}`;
                   section.querySelector(".post_content").innerHTML = `${item.content.rendered}`;
                   section.querySelector(".image_content").innerHTML = `<img src="${item.image.guid}">`;
@@ -73,11 +70,16 @@ function start() {
             </div>
 `;
 
-            portfolio.insertAdjacentHTML("beforeend", template);
+            if (item.project_type[0] === "Coding") {
+                document.querySelector("#coding-projects").insertAdjacentHTML("beforeend", template);
+            }
+
+            if (item.project_type[0] === "Other projects") {
+                document.querySelector("#other-projects").insertAdjacentHTML("beforeend", template);
+            }
 
             document.querySelectorAll(".keywords").forEach(keywordSection => {
                 let keywordSectionSlug = keywordSection.getAttribute("data-slug");
-                console.log("Data-slug: " + keywordSectionSlug); // For some reason, some pop up more than once?
 
                 if (keywordSectionSlug === itemSlug) {
                     item.keywords.forEach(keyword => {
