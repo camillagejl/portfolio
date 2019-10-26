@@ -36,7 +36,7 @@ function start() {
     // INSERT PORTFOLIO --------------------------------------------------------------------------
 
     async function getPortfolio() {
-        let pagesUrl = "https://camillagejl.com/portfolio/wordpress/wp-json/wp/v2/posts";
+        let pagesUrl = "https://camillagejl.com/portfolio/wordpress/wp-json/wp/v2/posts?per_page=100";
         let jsonData = await fetch(pagesUrl);
         portfolioItem = await jsonData.json();
         insertPortfolio();
@@ -62,6 +62,7 @@ function start() {
                     </div>
                     <div class="extra_info_content">
                         <a href="${item.link_for_projekt}" target="_blank">${item.link_text}</a>
+                        ${item.additional_links}
                     <div class="keywords" data-slug="${item.slug}">
                         <b>Keywords</b>
                     </div>

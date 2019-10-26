@@ -98,7 +98,7 @@ nav {
     background-color: white;
     display: flex;
     justify-content: space-around;
-    border-top: 3px solid black;
+    border-top: 3px solid var(--main-color);
     border-bottom: 1px solid var(--main-color-100);
     padding: 10px 0;
     font-weight: bold;
@@ -117,7 +117,7 @@ header {
 
 .header_title {
     font-size: 2rem;
-    margin-top: 20px;
+    padding-top: 4rem;
 }
 
 .header_sub_title {
@@ -158,6 +158,11 @@ header {
     padding: 20px;
 }
 
+.portfolio_heading {
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
 .post {
     display: flex;
     justify-content: space-between;
@@ -166,7 +171,7 @@ header {
 }
 
 #about .post {
-    margin-bottom: 1 0px;
+    margin-bottom: 10px;
 }
 
 .post_content:first-child {
@@ -184,6 +189,16 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.extra_info_content a {
+    border-left: 1px solid var(--main-color);
+    padding: 0 10px;
+}
+
+.extra_info_content a:first-child {
+    border: none;
+    padding-left: 0;
 }
 
 
