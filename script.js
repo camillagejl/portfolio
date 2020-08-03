@@ -7,7 +7,7 @@ function start() {
     // INSERT PAGES --------------------------------------------------------------------------
 
     async function getPages() {
-        let pagesUrl = "https://camillagejl.com/portfolio/wordpress/wp-json/wp/v2/pages";
+        let pagesUrl = "https://wp-portfolio.camillagejl.com/wp-json/wp/v2/pages";
         let jsonData = await fetch(pagesUrl);
         page = await jsonData.json();
         insertPages();
@@ -36,7 +36,7 @@ function start() {
     // INSERT PORTFOLIO --------------------------------------------------------------------------
 
     async function getPortfolio() {
-        let pagesUrl = "https://camillagejl.com/portfolio/wordpress/wp-json/wp/v2/posts?per_page=100";
+        let pagesUrl = "https://wp-portfolio.camillagejl.com/wp-json/wp/v2/posts?per_page=100";
         let jsonData = await fetch(pagesUrl);
         portfolioItem = await jsonData.json();
         insertPortfolio();
