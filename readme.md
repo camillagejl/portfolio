@@ -1,1 +1,1 @@
-# [View my portfolio](https://camillagejl.com/portfolio/)
+# [View my portfolio](https://camillagejl.com/)
