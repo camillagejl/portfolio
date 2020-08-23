@@ -103,6 +103,7 @@ nav {
     padding: 10px 0;
     font-weight: bold;
     z-index: 100;
+    box-shadow: 0 0 12px rgba(0,0,0,0.05);
 }
 
 nav a {
@@ -244,10 +245,9 @@ header {
 }
 /*----- 5. FOOTER -----*/
 
-footer {
-    position: absolute;
-    bottom: 0;
-    padding: 20px 0;
+footer.content {
+    padding-bottom: 10px;
+    padding-top: 0;
 }
 
 /* ----- 4. HELPERS ----- */
